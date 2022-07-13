@@ -10,14 +10,14 @@
  * @package Plugin_Name
  *
  * @wordpress-plugin
- * Plugin Name:     Plugin Name
- * Description:     This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Plugin Name:     Creador de citación y validador de enlaces
+ * Description:     Este plugin permite crear citaciones en las entradas y a la vez validar enlaces.
  * Version:         0.0.1
- * Author:          Your Name
+ * Author:          Juan Rivera
  * Author URI:      https://www.example.com
  * License:         GPL-2.0+
  * License URI:     http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:     plugin-name
+ * Text Domain:     Creador-de-citación-validador
  * Domain Path:     /lang
  */
 
@@ -72,6 +72,8 @@ if ( ! class_exists( 'plugin_name' ) ) {
 			$this->define_constants();
 			$this->includes();
 			$this->define_actions();
+			$this->define_menus();
+
 		}
 
 		public function load_plugin_textdomain() {
@@ -83,10 +85,11 @@ if ( ! class_exists( 'plugin_name' ) ) {
 		 */
 		public function includes() {
             // Example
-			require_once __DIR__ . '/includes/loader.php';
-
-			// Load custom functions and hooks
-			require_once __DIR__ . '/includes/includes.php';
+			require_once __DIR__ . '/includes/register-citation.php';
+			require_once __DIR__ . '/includes/display-citation.php';
+			require_once __DIR__ . '/includes/save-citation.php';
+			require_once __DIR__ . '/includes/shourtcode.php';
+			require_once __DIR__ . '/includes/menu-pages-links.php';
 		}
 
 		/**
@@ -119,8 +122,9 @@ if ( ! class_exists( 'plugin_name' ) ) {
 		/**
 		 * Define plugin_name menus
 		 */
-		public function define_menus() {
-            //
+		 
+			public function define_menus() {
+			require_once plugin_dir_path( __FILE__ ) . "/includes/menu.php";
 		}
 	}
 
