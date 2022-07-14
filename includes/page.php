@@ -107,7 +107,7 @@ class List_Table extends WP_List_Table
         foreach ($results as $result) {
             $data[] = [
                 "url" =>
-                    "<b><span><img src='../wp-content/plugins/wordpress-dev-challenge/assets/img/alerta.png' width='15' style='padding-right:10px'></span><a href=" .
+                    "<b><span><img src='assets/img/alerta.png' width='15' style='padding-right:10px'></span><a href=" .
                     $result["url"] .
                     ">" .
                     $result["url"] .
