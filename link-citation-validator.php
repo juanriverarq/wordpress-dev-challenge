@@ -124,7 +124,7 @@ if ( ! class_exists( 'Citalidator' ) ) {
 		 * Define Citalidator menus
 		 */
 		 
-			public function define_menus() {
+		public function define_menus() {
 			require_once plugin_dir_path( __FILE__ ) . "/includes/menu.php";
 		}
 	}

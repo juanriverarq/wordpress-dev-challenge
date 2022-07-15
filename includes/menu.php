@@ -4,8 +4,8 @@
 function menu_links_validator()
 {
     add_menu_page(
-        "link scanning",
-        "link scanning",
+        "Link Scanner",
+        "Link Scanner",
         "manage_options",
         "menu-links-validator",
         "link_scanning_results",
